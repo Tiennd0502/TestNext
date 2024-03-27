@@ -1,0 +1,6 @@
+.next
+.cache
+node_modules
+public
+next-env.d.ts
+next.config.ts
