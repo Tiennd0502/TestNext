@@ -11,6 +11,19 @@ const config: Config = {
       width: {
         maxScreen: '1440px',
       },
+      colors: {
+        mainColor: "#E7EDF0",
+        bgNavColor: "#0D2AAB",
+        iconColor: "#95A3D9",
+        blue: {
+          100: "#95A3D9",
+          200: '#8FE7F9',
+          300: '#9274FE',
+          400: '#6B57D7',
+          500: '#3048B7',
+          600: "#0D2AAB",
+        },
+      },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":

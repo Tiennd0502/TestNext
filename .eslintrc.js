@@ -3,7 +3,7 @@ module.exports = {
     browser: true,
     es2021: true,
   },
-  extends: ["eslint:recommended"],
+  extends: ["next", "eslint:recommended"],
   parserOptions: {
     ecmaFeatures: {
       jsx: true,
@@ -12,5 +12,9 @@ module.exports = {
     sourceType: "module",
   },
   plugins: ["react", "prettier"],
-  rules: {},
+  rules: {
+    "react/no-unescaped-entities": "off",
+    "@next/next/no-page-custom-font": "off",
+    "no-undef": "off"
+  },
 };
