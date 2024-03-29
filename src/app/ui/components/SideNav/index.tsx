@@ -1,5 +1,3 @@
-import { memo } from "react";
-
 // Components
 import Link from "next/link";
 import Image from "next/image";
@@ -10,8 +8,8 @@ import logo from "@/public/images/logo.webp";
 
 const SideNav = () => {
   return (
-    <div className="flex h-full flex-col px-3 py-10 md:px-10">
-      <Link href="/" title="Dashboard Page">
+    <div className="flex h-full flex-col ">
+      <Link href="/" title="Dashboard Page" className="px-3 py-10 md:px-10">
         <Image priority src={logo} width={213} height={46} alt="e-studies" />
       </Link>
       <div className="flex grow flex-row justify-between py-16 md:flex-col">
@@ -22,4 +20,4 @@ const SideNav = () => {
   );
 };
 
-export default memo(SideNav);
+export default SideNav;
