@@ -1,2 +1,2 @@
-export { default as SideNav } from "./SideNav";
+export { default as SideBar } from "./SideBar";
 export { default as NavLinks } from "./NavLinks";

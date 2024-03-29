@@ -20,7 +20,7 @@ export const SIDE_BAR = [
     name: "",
     subNav: [
       {
-        name: "Transaction",
+        name: "Dashboard",
         href: ROUTES.DASHBOARD,
         icon: DashboardIcon,
       },
