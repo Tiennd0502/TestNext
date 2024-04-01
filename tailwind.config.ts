@@ -9,7 +9,7 @@ const config: Config = {
   theme: {
     extend: {
       width: {
-        maxScreen: '1440px',
+        maxScreen: "1440px",
       },
       colors: {
         mainColor: "#E7EDF0",
@@ -17,11 +17,14 @@ const config: Config = {
         iconColor: "#95A3D9",
         blue: {
           100: "#95A3D9",
-          200: '#8FE7F9',
-          300: '#9274FE',
-          400: '#6B57D7',
-          500: '#3048B7',
+          200: "#8FE7F9",
+          300: "#9274FE",
+          400: "#543BD2",
+          500: "#3048B7",
           600: "#0D2AAB",
+        },
+        gray: {
+          100: "#4B5057",
         },
       },
       backgroundImage: {
