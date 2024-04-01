@@ -1,14 +1,13 @@
 "use client";
 
-import React, { useState } from "react";
-import { memo } from "react";
+import React, { useState, memo } from "react";
 import { DateRange } from "react-date-range";
 
 import { Input } from "@/app/ui/components";
 
 import { ChevronDownIcon } from "@/app/ui/icons";
 
-import { formatDateTime } from "@/app/lib/utils";
+import { formatDateRangeValue } from "@/app/lib/utils";
 
 const DateRangePickerCustom = () => {
   const currentMonth = new Date().getMonth();
@@ -32,7 +31,7 @@ const DateRangePickerCustom = () => {
         <Input
           name="title"
           type="button"
-          value={`${formatDateTime(state[0].startDate)}-${formatDateTime(state[0].endDate)}`}
+          value={formatDateRangeValue(state[0].startDate, state[0].endDate)}
           onClick={onToggle}
           rightIconElement={<ChevronDownIcon />}
         />

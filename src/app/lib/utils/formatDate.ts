@@ -8,3 +8,8 @@ import dayjs, { Dayjs } from "dayjs";
  */
 export const formatDateTime = (value: Date | Dayjs) =>
   dayjs(value).format("MMM D, YYYY");
+
+export const formatDateRangeValue = (
+  startDate: Date | Dayjs,
+  endDate: Date | Dayjs,
+) => `${formatDateTime(startDate)}-${formatDateTime(endDate)}`;

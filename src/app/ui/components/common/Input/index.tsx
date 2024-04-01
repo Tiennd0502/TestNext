@@ -1,6 +1,11 @@
 import clsx from "clsx";
-import { InputHTMLAttributes, LegacyRef, ReactNode, forwardRef } from "react";
-
+import {
+  InputHTMLAttributes,
+  ForwardedRef,
+  ReactNode,
+  forwardRef,
+  memo,
+} from "react";
 interface Props extends InputHTMLAttributes<HTMLInputElement> {
   type: string;
   name: string;
@@ -20,7 +25,7 @@ const Input = (
     rightIconElement,
     ...rest
   }: Props,
-  ref: LegacyRef<HTMLInputElement>,
+  ref: ForwardedRef<HTMLInputElement>,
 ) => {
   return (
     <div className={`flex flex-col relative ${errorMessage ? "" : "mb-8"}`}>
@@ -47,7 +52,7 @@ const Input = (
       />
 
       {rightIconElement && (
-        <div className="absolute inset-y-0 right-5 flex items-center">
+        <div className="absolute inset-y-0 right-2 flex items-center">
           {rightIconElement}
         </div>
       )}
@@ -61,4 +66,10 @@ const Input = (
   );
 };
 
-export default forwardRef(Input);
+const Component = forwardRef<HTMLInputElement, Props>(
+  function Component(props) {
+    return <Input {...props} />;
+  },
+);
+
+export default memo(Component);
