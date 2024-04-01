@@ -6,27 +6,12 @@ import {
   DateRangePickerCustom,
 } from "@/app/ui/components";
 import { DownloadIcon } from "@/app/ui/icons";
-
-const breadcrumbsData = [
-  {
-    label: "Home",
-    href: "home",
-  },
-  {
-    label: "Dashboard",
-    href: "dashboard",
-  },
-  {
-    label: "Sales Monitoring",
-    href: "sales_monitoring",
-  },
-];
+import { TOP_NAV } from '@/app/lib/constants';
 
 export const metadata: Metadata = {
   title: 'Dashboard',
   description: 'Dashboard Overview',
 }
- 
 
 const Dashboard = () => {
   return (
@@ -34,12 +19,12 @@ const Dashboard = () => {
       <div className="flex justify-between">
         <div>
           <p className="text-xl text-blue-600">Dashboard Overview</p>
-          <Breadcrumbs breadcrumbs={breadcrumbsData} />
+          <Breadcrumbs breadcrumbs={TOP_NAV} />
         </div>
         <div className="flex space-x-5">
           <DateRangePickerCustom />
           <div className=" h-9">
-            <Button className="flex items-center space-x-3 bg-blue-400 text-white">
+            <Button className="flex items-center space-x-3 bg-blue-300 text-white">
               <DownloadIcon />
               <span>Download Report</span>
             </Button>

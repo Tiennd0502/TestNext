@@ -1,11 +1,5 @@
 import clsx from "clsx";
-import {
-  InputHTMLAttributes,
-  ForwardedRef,
-  ReactNode,
-  forwardRef,
-  memo,
-} from "react";
+import { InputHTMLAttributes, ForwardedRef, ReactNode, forwardRef , memo} from "react";
 interface Props extends InputHTMLAttributes<HTMLInputElement> {
   type: string;
   name: string;
@@ -66,10 +60,4 @@ const Input = (
   );
 };
 
-const Component = forwardRef<HTMLInputElement, Props>(
-  function Component(props) {
-    return <Input {...props} />;
-  },
-);
-
-export default memo(Component);
+export default memo(forwardRef(Input));
