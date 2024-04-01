@@ -1,7 +1,13 @@
 import type { Metadata } from "next";
 import "@/app/globals.css";
+import 'react-date-range/dist/styles.css'; // main css file
+import 'react-date-range/dist/theme/default.css'; // theme css file
 import { acme } from "@/app/ui/fonts";
 import { SideBar } from "@/app/ui/components";
+
+import { ChatIcon, MenuIcon, NotifyIcon, SearchIcon } from "@/app/ui/icons";
+import Image from "next/image";
+import { avatar } from "@/public/images";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -15,12 +21,34 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+       <head>
+        <link rel="icon" href="/favicon.ico" />
+      </head>
       <body className={`${acme} antialiased`}>
-        <div className="flex h-screen flex-col md:flex-row ">
-          <div className="w-full flex-none md:w-64 bg-bgNavColor">
+        <div className="flex flex-col md:flex-row bg-mainColor">
+          <div className="w-full flex-none md:w-64 bg-bgNavColor h-full">
             <SideBar />
           </div>
-          <div className="flex-grow w-pageScreen ">{children}</div>
+          <div className="flex-grow w-pageScreen bg-white">
+            <div className="flex justify-between p-5">
+              <div className="flex items-center space-x-5">
+                <MenuIcon />
+                <SearchIcon />
+              </div>
+              <div className="flex items-center space-x-5">
+                <NotifyIcon />
+                <ChatIcon />
+                <Image
+                  priority
+                  src={avatar}
+                  width={28}
+                  height={28}
+                  alt="avatar"
+                />
+              </div>
+            </div>
+            <div className="bg-mainColor h-full">{children}</div>
+          </div>
         </div>
       </body>
     </html>
