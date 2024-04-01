@@ -1,6 +1,6 @@
 import { SVGProps } from "react";
 
-export const TransactionIcon = (props: SVGProps<SVGSVGElement>) => (
+export const TransactionIcon = (props?: SVGProps<SVGSVGElement>) => (
   <svg
     width="21"
     height="22"

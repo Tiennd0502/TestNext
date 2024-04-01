@@ -1,6 +1,6 @@
 import { SVGProps } from "react";
 
-export const ReportIcon = (props: SVGProps<SVGSVGElement>) => (
+export const ReportIcon = (props?: SVGProps<SVGSVGElement>) => (
   <svg
     width="21"
     height="20"
