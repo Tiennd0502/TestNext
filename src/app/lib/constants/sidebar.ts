@@ -31,7 +31,7 @@ export const SIDE_BAR = [
     subNav: [
       {
         name: "Transaction",
-        href: ROUTES.SALES_MONITORING,
+        href: ROUTES.TRANSACTION,
         icon: TransactionIcon,
       },
       { name: "Reports", href: ROUTES.REPORTS, icon: ReportIcon },

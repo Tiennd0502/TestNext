@@ -4,11 +4,11 @@ export const ROUTES = {
   TRANSACTION: "/transactions",
   DOCUMENTS: "/document",
   ORDERS: "/order",
-  HISTORY: "/history",
-  PROFILE: "/profile",
-  SETTINGS: "/setting",
-  LOGOUT: "/logout",
+  HISTORY: "#",
+  PROFILE: "#",
+  SETTINGS: "#",
+  LOGOUT: "#",
   CUSTOMERS: "/customer",
   REPORTS: "/report",
-  DASHBOARD: '/dashboard'
+  DASHBOARD: "/dashboard",
 };

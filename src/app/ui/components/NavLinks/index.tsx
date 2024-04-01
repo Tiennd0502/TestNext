@@ -13,9 +13,7 @@ const NavLinks = () => {
 
   return SIDE_BAR.map(({ name, subNav }, index) => (
     <div key={`${name}-${index}`} className="w-full">
-      <p className="text-base text-blue-100 text-outline-text-dark uppercase px-3 md:px-10">
-        {name}
-      </p>
+      <p className="text-base text-blue-100 uppercase px-3 md:px-10">{name}</p>
       <div className="py-7">
         {subNav.map((item, index) => {
           return (

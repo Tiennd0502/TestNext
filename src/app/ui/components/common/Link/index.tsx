@@ -1,6 +1,5 @@
 "use client";
 
-import { SVGProps } from "react";
 import { memo } from "react";
 import Link from "next/link";
 import clsx from "clsx";
@@ -8,24 +7,32 @@ import clsx from "clsx";
 interface IProp {
   isActive: boolean;
   href: string;
-  icon: (props?: SVGProps<SVGSVGElement>) => JSX.Element;
+  icon: () => JSX.Element;
   name: string;
 }
 
 const NavLink = ({ isActive, href, name, icon: Icon }: IProp) => (
   <Link
-    className={`flex h-14 grow items-center justify-center gap-5 p-3 rounded-md md:flex-none md:justify-start md:p-2 md:px-7 ${isActive ? "bg-blue-500 fill-white" : "fill-gray-100"}`}
+    className={clsx(
+      "flex h-12 grow items-center justify-center gap-5 p-3 rounded-md md:flex-none md:justify-start text-blue-100 md:p-2 md:px-7 hover:bg-blue-500",
+      {
+        "bg-blue-500 fill-white": isActive,
+      },
+      {
+        "text-blue-100": !isActive,
+      },
+    )}
     href={href}
     title={name}>
     <Icon />
     <span
       className={clsx(
-        "hidden text-[13px] md:block",
+        "hidden text-[14px] md:block text-blue-100",
         {
           "bg-blue-500 text-white": isActive,
         },
         {
-          "text-gray-100": !isActive,
+          "text-blue-100": !isActive,
         },
       )}>
       {name}

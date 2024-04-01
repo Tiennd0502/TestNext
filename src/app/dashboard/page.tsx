@@ -1,3 +1,5 @@
+import { Metadata } from 'next'
+
 import {
   Button,
   Breadcrumbs,
@@ -19,6 +21,13 @@ const breadcrumbsData = [
     href: "sales_monitoring",
   },
 ];
+
+export const metadata: Metadata = {
+  title: 'Dashboard',
+  description: 'Dashboard Overview',
+}
+ 
+
 const Dashboard = () => {
   return (
     <div className="pl-5 pr-2.5 py-5 h-full">
