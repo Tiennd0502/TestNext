@@ -23,8 +23,8 @@ const Dashboard = () => {
         </div>
         <div className="flex space-x-5">
           <DateRangePickerCustom />
-          <div className=" h-9">
-            <Button className="flex items-center space-x-3 bg-blue-300 text-white">
+          <div className="h-9">
+            <Button className="flex items-center space-x-3 text-white bg-blue-300">
               <DownloadIcon />
               <span>Download Report</span>
             </Button>

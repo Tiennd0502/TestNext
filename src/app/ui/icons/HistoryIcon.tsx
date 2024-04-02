@@ -9,7 +9,7 @@ export const HistoryIcon = (props?: SVGProps<SVGSVGElement>) => (
     xmlns="http://www.w3.org/2000/svg"
     {...props}>
     <path
-      fill-rule="evenodd"
+      fillRule="evenodd"
       clip-rule="evenodd"
       d="M0.648895 18H3.6489V15H0.648895V18ZM5.6489 18H20.6489V16H5.6489V18ZM0.648895 12H3.6489V9H0.648895V12ZM5.6489 12H20.6489V10H5.6489V12ZM0.648895 6H3.6489V3H0.648895V6ZM5.6489 6H20.6489V4H5.6489V6Z"
       fill="white"
@@ -22,7 +22,7 @@ export const HistoryIcon = (props?: SVGProps<SVGSVGElement>) => (
       width="21"
       height="15">
       <path
-        fill-rule="evenodd"
+        fillRule="evenodd"
         clip-rule="evenodd"
         d="M0.648895 18H3.6489V15H0.648895V18ZM5.6489 18H20.6489V16H5.6489V18ZM0.648895 12H3.6489V9H0.648895V12ZM5.6489 12H20.6489V10H5.6489V12ZM0.648895 6H3.6489V3H0.648895V6ZM5.6489 6H20.6489V4H5.6489V6Z"
         fill="white"

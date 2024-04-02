@@ -9,7 +9,7 @@ export const DashboardIcon = (props?: SVGProps<SVGSVGElement>) => (
     xmlns="http://www.w3.org/2000/svg"
     {...props}>
     <path
-      fill-rule="evenodd"
+      fillRule="evenodd"
       clip-rule="evenodd"
       d="M14.6489 17H18.6489V4H14.6489V17ZM2.6489 7H12.6489V4H2.6489V7ZM2.6489 12H12.6489V9H2.6489V12ZM2.6489 17H12.6489V14H2.6489V17ZM0.648895 19H20.6489V2H0.648895V19Z"
       fill="white"
@@ -22,7 +22,7 @@ export const DashboardIcon = (props?: SVGProps<SVGSVGElement>) => (
       width="21"
       height="17">
       <path
-        fill-rule="evenodd"
+        fillRule="evenodd"
         clip-rule="evenodd"
         d="M14.6489 17H18.6489V4H14.6489V17ZM2.6489 7H12.6489V4H2.6489V7ZM2.6489 12H12.6489V9H2.6489V12ZM2.6489 17H12.6489V14H2.6489V17ZM0.648895 19H20.6489V2H0.648895V19Z"
         fill="white"

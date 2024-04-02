@@ -41,8 +41,8 @@ export default function RootLayout({
                 <Image
                   priority
                   src={avatar}
-                  width={28}
-                  height={28}
+                  // width={28}
+                  // height={28}
                   alt="avatar"
                 />
               </div>
