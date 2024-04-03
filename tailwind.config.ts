@@ -25,6 +25,7 @@ const config: Config = {
         },
         gray: {
           100: "#4B5057",
+          200: "#F8F8FA",
         },
       },
       backgroundImage: {
