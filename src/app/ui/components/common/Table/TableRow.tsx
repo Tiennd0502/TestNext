@@ -5,10 +5,16 @@ const isEqual = require("react-fast-compare");
 
 import { Cell } from "@/app/lib/interfaces";
 
+// interface Props {
+//   rows: Cell[];
+//   itemData: Cell;
+// }
+
 interface Props<T> {
-  rows: Cell<T>[];
+  rows: Cell[];
   itemData: T;
 }
+
 
 const TableRow = <T,>({ rows, itemData }: Props<T>) => (
   <tr className="w-full text-[13px] bg-white even:bg-gray-200 h-12 border-b border-px">
@@ -18,7 +24,7 @@ const TableRow = <T,>({ rows, itemData }: Props<T>) => (
         <td
           key={`${row.key}-${row.label}`}
           className={`truncate max-w-[220px] whitespace-nowrap px-5 py-3 ${row.className}`}>
-          {row?.actionCell ? row?.actionCell(itemData) : value}
+          {row?.actionCell ? row?.actionCell() : value}
         </td>
       );
     })}
