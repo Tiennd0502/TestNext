@@ -1,12 +1,11 @@
-'use client'
- 
-export default function GlobalError({
+"use client";
+
+const GlobalError = ({
   reset,
 }: {
-  error: Error & { digest?: string }
-  reset: () => void
-}) {
-
+  error: Error & { digest?: string };
+  reset: () => void;
+}) => {
   const handleReset = () => reset();
 
   return (
@@ -16,5 +15,7 @@ export default function GlobalError({
         <button onClick={handleReset}>Try again</button>
       </body>
     </html>
-  )
-}
+  );
+};
+
+export default GlobalError;
