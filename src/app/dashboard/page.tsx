@@ -1,16 +1,22 @@
 import { Metadata } from "next";
 import { Suspense } from "react";
+import dynamic from "next/dynamic";
 
 import {
   Button,
   Breadcrumbs,
   DateRangePickerCustom,
-  RevenueTable,
   LoadingIndicator,
 } from "@/app/ui/components";
 
+const RevenueTable = dynamic(() => import("@/app/ui/components/RevenueTable"), {
+  ssr: false,
+});
+
 import { DownloadIcon } from "@/app/ui/icons";
+
 import { TOP_NAV } from "@/app/lib/constants";
+
 import { getRevenues } from "@/app/lib/apis";
 
 export const metadata: Metadata = {
@@ -31,7 +37,7 @@ const Dashboard = async () => {
         <div className="flex space-x-5">
           <DateRangePickerCustom />
           <div className="h-9">
-            <Button className="flex items-center space-x-3 text-white bg-blue-300">
+            <Button className="flex items-center space-x-3 text-white bg-blue-400">
               <DownloadIcon />
               <span>Download Report</span>
             </Button>
