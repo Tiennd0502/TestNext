@@ -5,7 +5,6 @@ import { Revenue } from "../interfaces";
 export const getRevenues = async () => {
   let errorMessage = "";
   let data = [] as Revenue[];
-
   await APIs.get<Revenue[]>(API_ROUTES.REVENUE)
     .then(results => {
       data = results;

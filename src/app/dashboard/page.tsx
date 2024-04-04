@@ -1,10 +1,12 @@
 import { Metadata } from "next";
+import { Suspense } from "react";
 
 import {
   Button,
   Breadcrumbs,
   DateRangePickerCustom,
-  RevenueTable
+  RevenueTable,
+  LoadingIndicator,
 } from "@/app/ui/components";
 
 import { DownloadIcon } from "@/app/ui/icons";
@@ -16,7 +18,7 @@ export const metadata: Metadata = {
   description: "Dashboard Overview",
 };
 
-const Dashboard = async() => {
+const Dashboard = async () => {
   const { data: revenue } = await getRevenues();
 
   return (
@@ -39,7 +41,9 @@ const Dashboard = async() => {
 
       <div className="py-5">
         <div className="w-8/12">
-          <RevenueTable data={revenue}/>
+          <Suspense fallback={<LoadingIndicator />}>
+            <RevenueTable data={revenue} />
+          </Suspense>
         </div>
       </div>
     </div>
