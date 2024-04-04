@@ -14,3 +14,5 @@ export * from "./NotifyIcon";
 export * from "./ChatIcon";
 export * from "./DownloadIcon";
 export * from "./ChevronDownIcon";
+export * from "./EditIcon";
+export * from "./TrashIcon";

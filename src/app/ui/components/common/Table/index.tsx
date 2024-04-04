@@ -10,7 +10,7 @@ import TableRow from "./TableRow";
 
 interface Props<T> {
   data: T[];
-  columns: Cell[];
+  columns: Cell<T>[];
 }
 
 const Table = <T,>({ columns, data }: Props<T>) => (

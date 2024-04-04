@@ -2,7 +2,7 @@
   "revenue": [
     {
       "id": "1",
-      "date": "12/09/2019",
+      "email": "12/09/2019",
       "orders": 233,
       "earnings": 345343
     },
@@ -47,6 +47,85 @@
       "date": "12/09/2019",
       "orders": 666,
       "earnings": 345343
+    }
+  ],
+  "customer": [
+    {
+      "id": "customer_1",
+      "email": "test@gmail.com",
+      "lastName": "Demo",
+      "firstName": "Customer",
+      "address": "12 York St, New Haven, CT 065103"
+    },
+    {
+      "id": "customer_2",
+      "email": "test@gmail.com",
+      "lastName": "Demo",
+      "firstName": "Customer",
+      "address": "12 York St, New Haven, CT 065103"
+    },
+    {
+      "id": "customer_3",
+      "email": "test@gmail.com",
+      "lastName": "Demo",
+      "firstName": "Customer",
+      "address": "12 York St, New Haven, CT 065103"
+    },
+    {
+      "id": "customer_4",
+      "email": "test@gmail.com",
+      "lastName": "Demo",
+      "firstName": "Customer",
+      "address": "12 York St, New Haven, CT 065103"
+    },
+    {
+      "id": "customer_5",
+      "email": "test@gmail.com",
+      "lastName": "Demo",
+      "firstName": "Customer",
+      "address": "12 York St, New Haven, CT 065103"
+    },
+    {
+      "id": "customer_6",
+      "email": "test@gmail.com",
+      "lastName": "Demo",
+      "firstName": "Customer",
+      "address": "12 York St, New Haven, CT 065103"
+    },
+    {
+      "id": "customer_7",
+      "email": "test@gmail.com",
+      "lastName": "Demo",
+      "firstName": "Customer",
+      "address": "12 York St, New Haven, CT 065103"
+    },
+    {
+      "id": "customer_8",
+      "email": "test@gmail.com",
+      "lastName": "Demo",
+      "firstName": "Customer",
+      "address": "12 York St, New Haven, CT 065103"
+    },
+    {
+      "id": "customer_9",
+      "email": "test@gmail.com",
+      "lastName": "Demo",
+      "firstName": "Customer",
+      "address": "12 York St, New Haven, CT 065103"
+    },
+    {
+      "id": "customer_10",
+      "email": "test@gmail.com",
+      "lastName": "Demo",
+      "firstName": "Customer",
+      "address": "12 York St, New Haven, CT 065103"
+    },
+    {
+      "id": "customer_11",
+      "email": "test@gmail.com",
+      "lastName": "Demo",
+      "firstName": "Customer",
+      "address": "12 York St, New Haven, CT 065103"
     }
   ]
 }
