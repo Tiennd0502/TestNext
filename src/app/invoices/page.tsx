@@ -5,6 +5,8 @@ export const metadata: Metadata = {
   description: 'Invoices Overview',
 }
 
-export default function Page() {
+const Invoices = () => {
   return <p>Invoices Page</p>;
 }
+
+export default Invoices;

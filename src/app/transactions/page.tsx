@@ -1,10 +1,12 @@
-import { Metadata } from 'next'
+import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: 'Transactions',
-  description: 'Transactions Overview',
-}
+  title: "Transactions",
+  description: "Transactions Overview",
+};
 
-export default function Page() {
+const Transactions = () => {
   return <p>Transactions Page</p>;
-}
+};
+
+export default Transactions;

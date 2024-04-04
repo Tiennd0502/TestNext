@@ -5,6 +5,8 @@ export const metadata: Metadata = {
   description: 'Report Overview',
 }
 
-export default function Page() {
+const Report = () => {
   return <p>Report Page</p>;
 }
+
+export default Report;
