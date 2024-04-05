@@ -16,3 +16,4 @@ export * from "./DownloadIcon";
 export * from "./ChevronDownIcon";
 export * from "./EditIcon";
 export * from "./TrashIcon";
+export * from "./SpinnerIcon";

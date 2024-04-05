@@ -1,17 +1,23 @@
 import clsx from "clsx";
-import { InputHTMLAttributes, ForwardedRef, ReactNode, forwardRef , memo} from "react";
+import {
+  InputHTMLAttributes,
+  ForwardedRef,
+  ReactNode,
+  forwardRef,
+  memo,
+} from "react";
 interface Props extends InputHTMLAttributes<HTMLInputElement> {
-  type: string;
   name: string;
   placeholder?: string;
   errorMessage?: string;
   labelName?: string;
+  type?: string;
   rightIconElement?: ReactNode;
 }
 
 const Input = (
   {
-    type,
+    type = 'string',
     name,
     labelName,
     errorMessage,
@@ -35,7 +41,7 @@ const Input = (
         name={name}
         placeholder={placeholder}
         className={clsx(
-          "w-full rounded-md border shadow border-white py-3 bg-white px-4 text-gray-100 text-bold",
+          "w-full rounded-md border border-gray-300 py-3 bg-white px-4 text-gray-100 text-bold",
           {
             "ring-1 ring-inset ring-red-500": !!errorMessage,
             "placeholder:text-gray-400": !!placeholder,

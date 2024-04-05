@@ -8,7 +8,7 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      width: {
+      widths: {
         maxScreen: "1440px",
       },
       colors: {
