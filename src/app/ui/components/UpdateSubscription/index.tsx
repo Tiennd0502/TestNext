@@ -10,7 +10,7 @@ const SideBar = () => (
       Unlock new features. Try out Everest without any limits
     </p>
     <div className="py-2">
-      <Button type="submit">
+      <Button className="bg-white">
         Update Subscription
       </Button>
     </div>
