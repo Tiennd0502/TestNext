@@ -1,4 +1,5 @@
-import { API_ROUTES, ERROR_MESSAGES } from "../constants";
+"use server";
+import { API_ROUTES, ERROR_MESSAGES, ROUTES } from "../constants";
 import { APIs } from "../services/request-api";
 import { Customer } from "../interfaces";
 
@@ -18,4 +19,14 @@ export const getCustomer = async () => {
     errorMessage,
     data,
   };
+};
+
+export const createCustomer = async (payload: Customer) => {
+  try {
+    await APIs.post<Customer>(API_ROUTES.CUSTOMER, payload);
+  } catch (error) {
+    return {
+      message: ERROR_MESSAGES.DEFAULT_API_ERROR,
+    };
+  }
 };

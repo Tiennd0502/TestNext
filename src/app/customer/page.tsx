@@ -11,7 +11,7 @@ const CustomerTable = dynamic(
   },
 );
 
-import { getCustomer } from "@/app/lib/apis";
+import { getCustomer } from "@/app/lib/actions";
 
 export const metadata: Metadata = {
   title: "Customer",

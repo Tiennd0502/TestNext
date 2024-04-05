@@ -10,6 +10,7 @@ import { Button, Input } from "..";
 import { ROUTES } from "@/app/lib/constants";
 import { Customer } from "@/app/lib/interfaces";
 import { isEnableSubmitButton, rulesValidate } from "@/app/lib/utils";
+import { createCustomer } from "@/app/lib/actions";
 
 interface IProps {
   customer?: Customer;
@@ -32,6 +33,7 @@ const CustomerForm = ({ customer }: IProps) => {
 
   // Handle submit form
   const onSubmit: SubmitHandler<Customer> = useCallback(data => {
+    createCustomer(data)
     console.log(data)
   }, []);
   const REQUIRED_FIELDS = ['firstName', 'lastName', 'email', 'address'];

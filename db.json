@@ -58,74 +58,53 @@
       "address": "12 York St, New Haven, CT 065103"
     },
     {
-      "id": "customer_2",
-      "email": "test@gmail.com",
-      "lastName": "Demo",
-      "firstName": "Customer",
-      "address": "12 York St, New Haven, CT 065103"
+      "id": "bf66",
+      "firstName": "Nhan112",
+      "lastName": "Tran 3",
+      "email": "andreea+435345@bluecart.com",
+      "address": "300 N Los Angeles St, Los Angeles, CA, US, 90012"
     },
     {
-      "id": "customer_3",
-      "email": "test@gmail.com",
-      "lastName": "Demo",
-      "firstName": "Customer",
-      "address": "12 York St, New Haven, CT 065103"
+      "id": "dfab",
+      "firstName": "Nhan 36456",
+      "lastName": "Tran 2",
+      "email": "nhan.tran+01@asnet.com.vn",
+      "address": "300 N Los Angeles St, Los Angeles, CA, US, 90012"
     },
     {
-      "id": "customer_4",
-      "email": "test@gmail.com",
-      "lastName": "Demo",
-      "firstName": "Customer",
-      "address": "12 York St, New Haven, CT 065103"
+      "id": "5142",
+      "firstName": "Nhan 3",
+      "lastName": "Nhan",
+      "email": "andreea+435345@bluecart.com",
+      "address": "1234 Main Street"
     },
     {
-      "id": "customer_5",
-      "email": "test@gmail.com",
-      "lastName": "Demo",
-      "firstName": "Customer",
-      "address": "12 York St, New Haven, CT 065103"
+      "id": "27cb",
+      "firstName": "nhan test",
+      "lastName": "Tran 2",
+      "email": "andreea+435345@bluecart.com",
+      "address": "300 N Los Angeles St, Los Angeles, CA, US, 90012"
     },
     {
-      "id": "customer_6",
-      "email": "test@gmail.com",
-      "lastName": "Demo",
-      "firstName": "Customer",
-      "address": "12 York St, New Haven, CT 065103"
+      "id": "e383",
+      "firstName": "Nhan 3 test 123",
+      "lastName": "Nhan",
+      "email": "andreea+435345@bluecart.com",
+      "address": "300 N Los Angeles St, Los Angeles, CA, US, 90012"
     },
     {
-      "id": "customer_7",
-      "email": "test@gmail.com",
-      "lastName": "Demo",
-      "firstName": "Customer",
-      "address": "12 York St, New Haven, CT 065103"
+      "id": "d05a",
+      "firstName": "Nhan112abc",
+      "lastName": "Tran",
+      "email": "testing@gmail.com",
+      "address": "1234 Main Street"
     },
     {
-      "id": "customer_8",
-      "email": "test@gmail.com",
-      "lastName": "Demo",
-      "firstName": "Customer",
-      "address": "12 York St, New Haven, CT 065103"
-    },
-    {
-      "id": "customer_9",
-      "email": "test@gmail.com",
-      "lastName": "Demo",
-      "firstName": "Customer",
-      "address": "12 York St, New Haven, CT 065103"
-    },
-    {
-      "id": "customer_10",
-      "email": "test@gmail.com",
-      "lastName": "Demo",
-      "firstName": "Customer",
-      "address": "12 York St, New Haven, CT 065103"
-    },
-    {
-      "id": "customer_11",
-      "email": "test@gmail.com",
-      "lastName": "Demo",
-      "firstName": "Customer",
-      "address": "12 York St, New Haven, CT 065103"
+      "id": "4214",
+      "firstName": "Nhan",
+      "lastName": "Tran",
+      "email": "andreea+5345345@bluecart.com",
+      "address": "300 N Los Angeles St, Los Angeles, CA, US, 90012"
     }
   ]
 }

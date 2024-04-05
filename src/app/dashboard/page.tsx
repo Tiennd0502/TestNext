@@ -17,7 +17,7 @@ import { DownloadIcon } from "@/app/ui/icons";
 
 import { TOP_NAV } from "@/app/lib/constants";
 
-import { getRevenues } from "@/app/lib/apis";
+import { getRevenues } from "@/app/lib/actions";
 
 export const metadata: Metadata = {
   title: "Dashboard",
