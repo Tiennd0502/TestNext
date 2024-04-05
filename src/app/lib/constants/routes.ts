@@ -11,4 +11,5 @@ export const ROUTES = {
   CUSTOMERS: "/customer",
   REPORTS: "/report",
   DASHBOARD: "/dashboard",
+  CREATE_CUSTOMER: "/customer/create",
 };
