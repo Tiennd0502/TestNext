@@ -1,5 +1,5 @@
-// const API_URL = process.env["API_END_POINTS"];
-const API_URL = "http://localhost:3000";
+const API_URL = process.env.NEXT_PUBLIC_API_END_POINTS;
+// const API_URL = "http://localhost:3000";
 
 import { revalidateTag } from "next/cache";
 import { unstable_noStore as noStore } from "next/cache";
@@ -7,7 +7,7 @@ import { unstable_noStore as noStore } from "next/cache";
 class API {
   async get<T>(path: string): Promise<T> {
     noStore();
-
+		console.log('API_URL', API_URL);
     const response = await fetch(`${API_URL}${path}`, {
       method: "GET",
       next: { tags: ["list-customer"] },
@@ -19,7 +19,8 @@ class API {
   }
 
   async post<T>(path: string, payload: object = {}): Promise<T> {
-    noStore();
+    // noStore();
+		console.log('API_URL', API_URL);
 
     const response = await fetch(`${API_URL}${path}`, {
       method: "POST",
