@@ -3,7 +3,7 @@ module.exports = {
     browser: true,
     es2021: true,
   },
-  extends: ["next", "eslint:recommended", "plugin:jsx-a11y/recommended"],
+  extends: ["next", "eslint:recommended", "plugin:jsx-a11y/recommended", "plugin:@typescript-eslint/recommended"],
   parserOptions: {
     ecmaFeatures: {
       jsx: true,
@@ -16,5 +16,8 @@ module.exports = {
     "react/no-unescaped-entities": "off",
     "@next/next/no-page-custom-font": "off",
     "no-undef": "off",
+    "no-unused-vars": "off",
+    "@typescript-eslint/no-unused-vars": ["error"],
+    "@typescript-eslint/no-var-requires": "off"
   },
 };
