@@ -1,16 +1,27 @@
 "use client";
 
-import { memo, useMemo, useState } from "react";
+import { memo, useState } from "react";
 import { useForm } from "react-hook-form";
 import isEqual from "react-fast-compare";
 import { useRouter } from "next/navigation";
 
 // Components
 import { Button, Input } from "..";
-import { ROUTES } from "@/app/lib/constants";
+
+import {
+  ERROR_MESSAGES,
+  ROUTES,
+  SUCCESS_MESSAGES,
+  TOAST_TYPE,
+} from "@/app/lib/constants";
+
 import { Customer } from "@/app/lib/interfaces";
-import { isEnableSubmitButton, rulesValidate } from "@/app/lib/utils";
-import { createCustomer } from "@/app/lib/actions";
+
+import { rulesValidate } from "@/app/lib/utils";
+
+import { createCustomer, editCustomer } from "@/app/lib/actions";
+
+import { useToast } from "@/app/lib/hooks/useToast";
 
 interface IProps {
   customer?: Customer;
@@ -19,13 +30,14 @@ interface IProps {
 const CustomerForm = ({ customer }: IProps) => {
   const router = useRouter();
   const [isLoading, setIsLoading] = useState<boolean>(false);
+  const { openToast } = useToast();
 
   const {
     handleSubmit,
     register,
-    formState: { errors, isValid, dirtyFields },
+    formState: { errors, isValid, isDirty },
   } = useForm<Customer>({
-    mode: "onSubmit",
+    mode: "onBlur",
     reValidateMode: "onChange",
     defaultValues: {
       ...customer,
@@ -33,42 +45,38 @@ const CustomerForm = ({ customer }: IProps) => {
   });
 
   const onSubmit = async (data: Customer) => {
+    const isEdit = data?.id;
+
     try {
       setIsLoading(true);
-      
-      await createCustomer(data);
+
+      isEdit ? await editCustomer(data) : await createCustomer(data);
       setIsLoading(false);
 
-      isLoading && router.back();
-      // openToast({
-      //   type: TOAST_TYPE.SUCCESS,
-      //   message: ADD_NEW_CUSTOMER.SUCCESS,
-      // });
-    } catch (err: any) {
-      // openToast({
-      //   type: TOAST_TYPE.ERROR,
-      //   message: ADD_NEW_CUSTOMER.FAILED,
-      // });
+      openToast({
+        type: TOAST_TYPE.SUCCESS,
+        message: isEdit
+          ? SUCCESS_MESSAGES.EDIT_CUSTOMER
+          : SUCCESS_MESSAGES.ADD_NEW_CUSTOMER,
+      });
+      !isLoading && router.back();
+    } catch (err) {
+      setIsLoading(false);
+      openToast({
+        type: TOAST_TYPE.ERROR,
+        message: ERROR_MESSAGES.DEFAULT_API_ERROR,
+      });
     }
   };
 
-  const REQUIRED_FIELDS = ['firstName', 'lastName', 'email', 'address'];
-
-  // Checking to disable/enable submit button
-  const dirtyItems = Object.keys(dirtyFields);
-  const isEnableSubmit = useMemo(
-    () => isEnableSubmitButton(REQUIRED_FIELDS, dirtyItems, errors),
-    [dirtyItems, errors, REQUIRED_FIELDS],
-  );
-
   // Handle disable submit button
-  const isDisableSubmit = !isEnableSubmit || !isValid;
+  const isDisableSubmit = !isDirty || !isValid;
 
   const handleCancel = () => router.push(ROUTES.CUSTOMERS);
 
   return (
     <div className="rounded-md bg-bgForm p-4 w-2/4 md:p-6 bg-white mt-10">
-      <p className="text-center text-xl text-blue-600">Add new customer</p>
+      <p className="text-center text-xl text-blue-600">{`${customer?.id ? "Edit" : "Add"} new customer`}</p>
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className="mb-4">
           <label htmlFor="firstname" className="label--primary">
