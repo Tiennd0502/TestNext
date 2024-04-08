@@ -43,7 +43,6 @@ const CustomerTable = ({ data }: IProps) => {
     widthPercent: 16,
     actionCell: () => renderActions(),
   }
-  console.log("columns", column)
   const newColumns = [...CUSTOMER_COLUMNS, column ]
   return <Table data={data} columns={newColumns} />;
 };

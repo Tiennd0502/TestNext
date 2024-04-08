@@ -1,7 +1,7 @@
 "use client";
 
-import { memo, useCallback, useMemo } from "react";
-import { useForm, SubmitHandler } from "react-hook-form";
+import { memo, useMemo, useState } from "react";
+import { useForm } from "react-hook-form";
 import isEqual from "react-fast-compare";
 import { useRouter } from "next/navigation";
 
@@ -18,6 +18,7 @@ interface IProps {
 
 const CustomerForm = ({ customer }: IProps) => {
   const router = useRouter();
+  const [isLoading, setIsLoading] = useState<boolean>(false);
 
   const {
     handleSubmit,
@@ -31,11 +32,26 @@ const CustomerForm = ({ customer }: IProps) => {
     },
   });
 
-  // Handle submit form
-  const onSubmit: SubmitHandler<Customer> = useCallback(data => {
-    createCustomer(data)
-    console.log(data)
-  }, []);
+  const onSubmit = async (data: Customer) => {
+    try {
+      setIsLoading(true);
+      
+      await createCustomer(data);
+      setIsLoading(false);
+
+      isLoading && router.back();
+      // openToast({
+      //   type: TOAST_TYPE.SUCCESS,
+      //   message: ADD_NEW_CUSTOMER.SUCCESS,
+      // });
+    } catch (err: any) {
+      // openToast({
+      //   type: TOAST_TYPE.ERROR,
+      //   message: ADD_NEW_CUSTOMER.FAILED,
+      // });
+    }
+  };
+
   const REQUIRED_FIELDS = ['firstName', 'lastName', 'email', 'address'];
 
   // Checking to disable/enable submit button
@@ -109,7 +125,7 @@ const CustomerForm = ({ customer }: IProps) => {
           <Button
             type="submit"
             disabled={isDisableSubmit}
-            isLoading={false}
+            isLoading={isLoading}
             className="text-white w-40 bg-blue-400">
             Submit
           </Button>

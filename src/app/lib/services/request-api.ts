@@ -16,8 +16,6 @@ class API {
   }
 
   async post<T>(path: string, payload: object = {}): Promise<T> {
-    console.log("path", API_URL);
-
     const response = await fetch(`${API_URL}${path}`, {
       method: "POST",
       headers: {
