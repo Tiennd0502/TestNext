@@ -24,4 +24,10 @@ export const CUSTOMER_COLUMNS = [
     label: "Address",
     widthPercent: 20,
   },
+  {
+    key: "action",
+    label: "Actions",
+    widthPercent: 16,
+    isShowAction: true,
+  },
 ];
