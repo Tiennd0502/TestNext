@@ -59,26 +59,14 @@ const CustomerTable = ({ data }: IProps) => {
     }
   };
 
-  // Handle set selected id when click delete button
-  const handleShowModal = useCallback((id: string) => {
-    setIsOpenModal(true);
-    setSelectedIdCustomer(id);
-  }, []);
-
   const handleCloseModal = () => {
     setIsOpenModal(false);
   };
-
-  const handleNavigateToEditPage = (id: string) =>
-    router.push(ROUTES.EDIT_CUSTOMER(id));
-
   return (
     <>
       <Table
         data={data}
         columns={CUSTOMER_COLUMNS}
-        handleRemove={handleShowModal}
-        handleEdit={handleNavigateToEditPage}
       />
 
       {isOpenModal && (
