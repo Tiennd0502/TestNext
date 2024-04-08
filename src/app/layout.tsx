@@ -1,13 +1,14 @@
 import type { Metadata } from "next";
 import "@/app/globals.css";
-import 'react-date-range/dist/styles.css'; // main css file
-import 'react-date-range/dist/theme/default.css'; // theme css file
+import "react-date-range/dist/styles.css"; // main css file
+import "react-date-range/dist/theme/default.css"; // theme css file
 import { acme } from "@/app/ui/fonts";
 import { SideBar } from "@/app/ui/components";
 
 import { ChatIcon, MenuIcon, NotifyIcon, SearchIcon } from "@/app/ui/icons";
 import Image from "next/image";
 import { avatar } from "@/public/images";
+import { ToastProvider } from "./lib/context/toast";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -21,7 +22,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-       <head>
+      <head>
         <link rel="icon" href="/favicon.ico" />
       </head>
       <body className={`${acme} antialiased`}>
@@ -41,13 +42,15 @@ export default function RootLayout({
                 <Image
                   priority
                   src={avatar}
-                  // width={28}
-                  // height={28}
+                  width={28}
+                  height={28}
                   alt="avatar"
                 />
               </div>
             </div>
-            <div className="bg-mainColor h-full">{children}</div>
+            <div className="bg-mainColor h-full">
+              <ToastProvider>{children}</ToastProvider>
+            </div>
           </div>
         </div>
       </body>

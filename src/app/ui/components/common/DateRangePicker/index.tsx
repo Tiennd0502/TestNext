@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, memo } from "react";
-import { DateRange } from "react-date-range";
+import { DateRange, RangeKeyDict } from "react-date-range";
 
 import { Input } from "@/app/ui/components";
 
@@ -12,7 +12,7 @@ import { formatDateRangeValue } from "@/app/lib/utils";
 const DateRangePickerCustom = () => {
   const currentMonth = new Date().getMonth();
   const currentYear = new Date().getFullYear();
-  const [isOpen, setIsOpen] = useState<Boolean>(false);
+  const [isOpen, setIsOpen] = useState<boolean>(false);
   const [state, setState] = useState([
     {
       startDate: new Date(currentYear, currentMonth, 1),
@@ -23,6 +23,10 @@ const DateRangePickerCustom = () => {
 
   const onToggle = () => {
     setIsOpen(!isOpen);
+  };
+
+  const onChange = (item: { selection: RangeKeyDict }) => {
+    setState(item?.selection);
   };
 
   return (
@@ -41,7 +45,7 @@ const DateRangePickerCustom = () => {
           <DateRange
             showDateDisplay={false}
             editableDateInputs={true}
-            onChange={(item: any) => setState([item.selection])}
+            onChange={onChange}
             moveRangeOnFirstSelection={false}
             ranges={state}
             dateDisplayFormat="PP"
